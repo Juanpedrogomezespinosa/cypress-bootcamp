@@ -36,7 +36,7 @@ describe("Práctica de componentes generales en CommitQuality", () => {
     // Comprobamos el texto esperado
     cy.contains("option1 clicked").should("be.visible");
 
-    // Puntos Extra: Comprobamos el valor de la label asociada al radio button 1
+    // Puntos Extra:
     // Usamos .siblings() para buscar la etiqueta <label> que comparte padre con este input
     cy.get('[data-testid="option1"]')
       .siblings("label")
