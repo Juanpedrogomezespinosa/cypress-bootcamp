@@ -21,7 +21,11 @@ describe("Práctica de componentes generales en CommitQuality", () => {
       .should("have.text", "Button double clicked");
 
     // 3. Click derecho en el tercer botón
-    cy.get('[data-testid="right-click"]').rightclick();
+    cy.get('[data-testid="right-click"]')
+      .rightclick()
+      .siblings("p")
+      .should("have.length", 3)
+      .should("contain", "Button right mouse clicked");
     // Comprobamos la posición exacta del resultado
     cy.get('[data-testid="right-click"]')
       .next("p")
