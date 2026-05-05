@@ -8,7 +8,7 @@ describe("Práctica de componentes generales en CommitQuality", () => {
   it("debe interactuar con los 3 botones y mostrar el texto en el lugar correcto", () => {
     // 1. Click normal en el primer botón
     cy.get('[data-testid="basic-click"]').click();
-    // Puntos Extra: Usamos .next() para asegurar que el texto es el elemento hermano adyacente
+    // Usamos .next() para asegurar que el texto es el elemento hermano adyacente
     cy.get('[data-testid="basic-click"]')
       .next("p")
       .should("have.text", "Button clicked");
